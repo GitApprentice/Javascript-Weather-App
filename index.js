@@ -1,4 +1,5 @@
 const key = "786a8488eb62eba11ecc454cd1ade2f0";
+const backdrop = document.querySelector('body');
 const searchBar = document.querySelector('.search-bar');
 const locationName = document.querySelector('.location');
 const currentDate = document.querySelector('.date');
@@ -21,14 +22,15 @@ function getApi(cityVal) {
             console.log(data)
             locationName.innerHTML = data.name + ', ' + data.sys.country;
             currentDate.innerHTML = data.timezone;
-            temperature.innerHTML = Math.round(data.main.temp);
+            temperature.innerHTML = Math.round(data.main.temp) + '&deg;F';
+
+            
         })
 }
 
 
 
-/*fetch(`https://api.openweathermap.org/data/2.5/weather?q=Seattle&appid=${key}`)
-    .then(res => res.json())
-    .then(json => console.log(json))*/
+
+
 
 
